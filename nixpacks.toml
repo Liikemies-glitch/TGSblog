@@ -1,12 +1,10 @@
-[providers.node]
-version = "18"
-
-[build]
-cmd = "npm ci && npm run build"
-
-[start]
-cmd = "npm start"
-
 [variables]
 NODE_ENV = "production"
-STRAPI_DISABLE_UPDATE_NOTIFICATION = "true" 
+
+providers = ["node"]
+
+[phases.build]
+cmds = ["npm ci", "npm run build"]
+
+[phases.start]
+cmd = "npm start" 
